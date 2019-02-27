@@ -1,0 +1,29 @@
+@import '../styles/_mixin.scss';
+
+.home-content {
+  margin: 30px auto;
+  height: 100%;
+  width: auto;
+  @media #{$breakDesktop} {
+    width: 1500px;
+    height: calc(100vh - 7.5em);
+  }
+}
+
+.movies-list-container {
+
+}
+
+.add-movie-container {
+  padding: 0 30px;
+
+  .btn-add-movie {
+    padding: 12px 17px;
+    margin-bottom: 20px;
+  }
+
+  .icon-movie {
+    font-size: 20px;
+    margin-right: 12px;
+  }
+}

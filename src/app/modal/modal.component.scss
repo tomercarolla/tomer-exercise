@@ -1,0 +1,51 @@
+@import '../styles/_mixin.scss';
+
+.modal-container {
+  &:before {
+    content: '';
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .3;
+  }
+}
+
+.edit-content-container {
+  width: 500px;
+  height: auto;
+  background: #FFF;
+  color: #000;
+  font-size: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top: 5px solid blue;
+  @include box-shadow(0 4px 8px 0 rgba(0,0,0,0.2));
+
+  @media #{$breakMobile} {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+.header {
+  height: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn-x-close {
+    font-size: 20px;
+    color: #000;
+  }
+}
+
+.footer-modal {
+  padding: 10px 20px;
+}

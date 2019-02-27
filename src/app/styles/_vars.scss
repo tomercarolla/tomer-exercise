@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+$fontFamily: 'Open sans';
+
+$breakMobile: "(max-width: 767px)";
+$breakTablet: "(min-width: 768px) and (max-width: 1199px)";
+$breakDesktop: "(min-width: 1200px)";
+
+$fontSize--sm: 12px;
+$fontSize--md: 14px;
+$fontSize--lg: 16px;
+
+$margin--sm: 6px;
+$margin--md: 9px;
+$margin--lg: 12px;
+
+$padding--sm: 6px;
+$padding--md: 9px;
+$padding--lg: 12px;
+
+$submitButton: #207eed;
+$cancelButton: #637282;

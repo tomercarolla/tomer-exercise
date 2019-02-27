@@ -1,0 +1,57 @@
+@import '../../styles/_mixin.scss';
+
+.edit-movie-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 330px;
+  padding: 20px;
+
+  label {
+    font-size: 14px;
+    @media #{$breakMobile} {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media #{$breakMobile} {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .inputtext {
+      height: 32px;
+      width: 360px;
+      background: transparent;
+      border: 1px solid darken(#CCC, 10%);
+      color: #000;
+      padding-left: 10px;
+
+      &.ng-invalid {
+        border-color: #ec3f3f;
+      }
+
+      @media #{$breakMobile} {
+        width: 280px;
+      }
+
+      &:focus,
+      &:hover {
+        @include box-shadow(0 0 5px 0 rgba(102, 102, 102, 0.5));
+      }
+    }
+  }
+}
+
+.validation-container {
+  padding-left: 20px;
+  font-size: 12px;
+  color: #ec3f3f;
+}

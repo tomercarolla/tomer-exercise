@@ -1,0 +1,29 @@
+<div class="movie-list">
+  <div class="movie-card-container" *ngFor="let movie of movies">
+    <div class="movie-card">
+      <div class="movie-card__inner">
+        <div class="movie-card__front u-flex u-flex-align-items--center u-flex-justify-content--center">
+          <p>{{movie.title | titlePipe}}</p>
+        </div>
+        <div class="movie-card__back">
+          <div class="text u-flex u-flex-align-items--start u-flex-direction--column u-flex-justify-content--space-evenly">
+            <p>Year: {{movie.year}}</p>
+            <p>Runtime: {{movie.runtime}}</p>
+            <p>Genre: {{movie.genre}}</p>
+            <p>Director: {{movie.director}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="movie-options">
+      <button class="btn btn-edit-movie" (click)="openEditDialog(movie)">
+        <i class="fas fa-pen"></i>
+      </button>
+      <button class="btn btn-delete-movie" (click)="openDeleteDialog(movie)">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-modal *ngIf="isActiveModal | async"></app-modal>

@@ -1,0 +1,41 @@
+@import '../styles/_mixin.scss';
+
+.header-container {
+  background: #000;
+  color: white;
+  height: 60px;
+
+  > ul {
+    height: 100%;
+    padding: 0 ($padding--lg + 8);
+  }
+}
+
+.link-container {
+  width: 90px;
+  height: 56px;
+  margin: 0 10px;
+  border-bottom: 4px solid transparent;
+
+  &.selected {
+    border-color: red;
+
+    .link:hover {
+      background: #000;
+    }
+  }
+
+  .link {
+    text-decoration: none;
+    color: #FFF;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: lighten(#000, 10%);
+    }
+  }
+}

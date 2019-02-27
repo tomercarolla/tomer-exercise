@@ -1,0 +1,24 @@
+<div class="modal-container">
+
+  <div class="edit-content-container">
+
+    <header class="header">
+      <div *ngIf="(modalContext | async) === 'add'">Add movie</div>
+      <div *ngIf="(modalContext | async) === 'edit'">Edit movie</div>
+      <div *ngIf="(modalContext | async) === 'delete'">Delete movie</div>
+      <button class="btn btn-x-close" (click)="hideModal()">X</button>
+    </header>
+
+    <app-modal-edit *ngIf="(modalContext | async) === 'edit' || (modalContext | async) === 'add'" [movie]="activeMovie | async" [movieForm]="movieForm"></app-modal-edit>
+
+    <app-modal-delete *ngIf="(modalContext | async) === 'delete'" [movie]="activeMovie | async"></app-modal-delete>
+
+    <footer class="u-flex u-flex-align-items--center u-flex-justify-content--end footer-modal">
+      <button class="btn btn--cancel footer-button" (click)="hideModal()">Cancel</button>
+      <button class="btn btn--submit footer-button footer-button--right" [disabled]="movieForm.invalid" *ngIf="(modalContext | async) === 'add'" (click)="addMovie()">Add</button>
+      <button class="btn btn--submit footer-button footer-button--right" [disabled]="movieForm.invalid" *ngIf="(modalContext | async) === 'edit'" (click)="saveEdit()">Save</button>
+      <button class="btn btn--submit footer-button footer-button--right" *ngIf="(modalContext | async) === 'delete'" (click)="deleteMovie()">Delete</button>
+    </footer>
+  </div>
+
+</div>
