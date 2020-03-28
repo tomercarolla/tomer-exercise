@@ -1,67 +1,79 @@
-<section class="content">
-  <form action="" [formGroup]="movieForm" novalidate>
+<article class="content">
+  <form [formGroup]="movieForm" novalidate>
 
-    <div class="edit-movie-container">
-      <div *ngIf="(modalContext | async) === 'edit'">
-        <label for="movieID">ID MOVIE: {{movie.id}}</label>
-      </div>
-      <div class="input-container">
-        <label for="movieTitle">Title:</label>
-        <input class="inputtext" type="text" id="movieTitle" name="title" formControlName="title" [value]="movieForm.get('title').value | titlePipe" required>
-      </div>
-      <div class="input-container">
-        <label for="movieYear">Year:</label>
-        <input class="inputtext" type="text" id="movieYear" name="year" formControlName="year" required>
-      </div>
-      <div class="input-container">
-        <label for="movieRuntime">Runtime:</label>
-        <input class="inputtext" type="text" id="movieRuntime" name="runtime" formControlName="runtime" required>
-      </div>
-      <div class="input-container">
-        <label for="movieGenre">Genre:</label>
-        <input class="inputtext" type="text" id="movieGenre" name="genre" formControlName="genre" required>
-      </div>
-      <div class="input-container">
-        <label for="movieDirector">Director:</label>
-        <input class="inputtext" type="text" id="movieDirector" name="director" formControlName="director" required>
-      </div>
-    </div>
+    <section class="edit-movie-container">
+      <header *ngIf="(modalContext | async) === 'edit'">
+        <h2>ID MOVIE: {{movie.id}}</h2>
+      </header>
 
-    <div class="validation-container">
-
-      <div *ngIf="movieForm.controls['title'].invalid"
-        class="validation text-validation">
-        <div *ngIf="movieForm.controls['title'].errors.required">
-          *Title is required.
+      <section class="input-container">
+        <div class="input-container__row">
+          <label for="movieTitle">Title:</label>
+          <input class="inputtext" type="text" id="movieTitle" name="title" formControlName="title"
+                 [value]="movieForm.get('title').value | titlePipe" required>
         </div>
-        *Title is invalid.
-      </div>
 
-      <div *ngIf="movieForm.controls['year'].invalid" class="validation text-validation">
-        <div *ngIf="movieForm.controls['year'].errors.required">
-          *Year is required.
+        <div *ngIf="movieForm.controls['title'].invalid"
+             class="validation text-validation">
+          <div *ngIf="movieForm.controls['title'].errors.required">
+            *Title is required.
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div *ngIf="movieForm.controls['runtime'].invalid" class="validation text-validation">
-        <div *ngIf="movieForm.controls['runtime'].errors.required">
-          *Runtime is required.
+      <section class="input-container">
+        <div class="input-container__row">
+          <label for="movieYear">Year:</label>
+          <input class="inputtext" type="text" id="movieYear" name="year" formControlName="year" required>
         </div>
-      </div>
 
-      <div *ngIf="movieForm.controls['genre'].invalid" class="validation text-validation">
-        <div *ngIf="movieForm.controls['genre'].errors.required">
-          *Genre is required.
+        <div *ngIf="movieForm.controls['year'].invalid" class="validation text-validation">
+          <div *ngIf="movieForm.controls['year'].errors.required">
+            *Year is required.
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div *ngIf="movieForm.controls['director'].invalid" class="validation text-validation">
-        <div *ngIf="movieForm.controls['director'].errors.required">
-          *Director is required.
+      <section class="input-container">
+        <div class="input-container__row">
+          <label for="movieRuntime">Runtime:</label>
+          <input class="inputtext" type="text" id="movieRuntime" name="runtime" formControlName="runtime" required>
         </div>
-      </div>
 
-    </div>
+        <div *ngIf="movieForm.controls['runtime'].invalid" class="validation text-validation">
+          <div *ngIf="movieForm.controls['runtime'].errors.required">
+            *Runtime is required.
+          </div>
+        </div>
+      </section>
+
+      <section class="input-container">
+        <div class="input-container__row">
+          <label for="movieGenre">Genre:</label>
+          <input class="inputtext" type="text" id="movieGenre" name="genre" formControlName="genre" required>
+        </div>
+
+        <div *ngIf="movieForm.controls['genre'].invalid" class="validation text-validation">
+          <div *ngIf="movieForm.controls['genre'].errors.required">
+            *Genre is required.
+          </div>
+        </div>
+      </section>
+
+      <section class="input-container">
+        <div class="input-container__row">
+          <label for="movieDirector">Director:</label>
+          <input class="inputtext" type="text" id="movieDirector" name="director" formControlName="director" required>
+        </div>
+
+        <div *ngIf="movieForm.controls['director'].invalid" class="validation text-validation">
+          <div *ngIf="movieForm.controls['director'].errors.required">
+            *Director is required.
+          </div>
+        </div>
+      </section>
+
+    </section>
 
   </form>
-</section>
+</article>

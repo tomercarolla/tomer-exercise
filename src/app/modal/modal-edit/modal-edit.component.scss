@@ -18,8 +18,14 @@
 
   .input-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+
+    &__row {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      align-items: center;
+      grid-gap: 12px;
+    }
 
     @media #{$breakMobile} {
       flex-direction: column;
@@ -28,7 +34,6 @@
 
     .inputtext {
       height: 32px;
-      width: 360px;
       background: transparent;
       border: 1px solid darken(#CCC, 10%);
       color: #000;
@@ -50,8 +55,9 @@
   }
 }
 
-.validation-container {
-  padding-left: 20px;
+.text-validation {
+  display: flex;
+  flex-direction: row-reverse;
   font-size: 12px;
   color: #ec3f3f;
 }

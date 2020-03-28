@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {Movie} from '../../movie.model';
 import {MovieService} from '../../movie.service';
@@ -6,7 +6,8 @@ import {MovieService} from '../../movie.service';
 @Component({
   selector: 'app-modal-edit',
   templateUrl: './modal-edit.component.html',
-  styleUrls: ['./modal-edit.component.scss']
+  styleUrls: ['./modal-edit.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ModalEditComponent implements OnInit {
 
@@ -14,7 +15,8 @@ export class ModalEditComponent implements OnInit {
   @Input() movie: Movie;
   modalContext = this.movieservice.modalContext;
 
-  constructor(private movieservice: MovieService) { }
+  constructor(private movieservice: MovieService) {
+  }
 
   ngOnInit() {
   }
